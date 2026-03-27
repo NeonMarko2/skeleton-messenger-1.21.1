@@ -24,6 +24,8 @@ public class SkeletonWhistleItem extends Item {
         super(settings);
     }
 
+    public final int WHISTLE_COOLDOWN = 20*60;
+
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
@@ -52,7 +54,7 @@ public class SkeletonWhistleItem extends Item {
                 world.playSound(null, user.getBlockPos(), SoundEvents.AMBIENT_CAVE.value(), SoundCategory.PLAYERS, 1, 1);
                 whistle_owner.getWorld().playSound(null, whistle_owner.getBlockPos(), SoundEvents.AMBIENT_CAVE.value(), SoundCategory.PLAYERS, 1, 1);
                 whistle_owner.sendMessage(Text.translatable("skeletonmessenger.popup.summoned"), true);
-                user.getItemCooldownManager().set(this, 20*5); /// MAKE THIS CONFIGURABLE IN GAME
+                user.getItemCooldownManager().set(this, WHISTLE_COOLDOWN); /// MAKE THIS CONFIGURABLE IN GAME
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 20*5, 1));
             }
         }
