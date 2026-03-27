@@ -31,8 +31,8 @@ public class SkeletonMessengerEntity extends MobEntity{
         targetSelector.clear(null);
     }
 
-    private final int vanishTime = 20*100; ///MAKE THIS CONFIGURABLE IN GAME AS WELL
-    private int timerUntilVanish = vanishTime;
+    private final int VANISH_TIME = 20*60; ///MAKE THIS CONFIGURABLE IN GAME AS WELL
+    private int timerUntilVanish = VANISH_TIME;
     private ItemStack itemToMail = ItemStack.EMPTY;
     public PlayerEntity caller;
     public PlayerEntity owner;
@@ -43,6 +43,11 @@ public class SkeletonMessengerEntity extends MobEntity{
         return MobEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 99)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1);
+    }
+
+    @Override
+    public boolean isPersistent() {
+        return super.isPersistent();
     }
 
     @Override
