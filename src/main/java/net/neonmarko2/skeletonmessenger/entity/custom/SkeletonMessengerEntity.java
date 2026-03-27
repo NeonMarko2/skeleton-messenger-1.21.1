@@ -146,12 +146,9 @@ public class SkeletonMessengerEntity extends MobEntity{
                 }
 
                 SkeletonMessengerEntity skeletonMessenger = new SkeletonMessengerEntity(ModEntities.SKELETON_MESSENGER, owner.getWorld());
-                var playerFacing = owner.getEyePos().add(owner.getRotationVec(1.0f).multiply(2));
-                var skeletonSpawnPosition = new Vec3d(playerFacing.x, owner.getY(), playerFacing.z);
-                skeletonMessenger.setPosition(skeletonSpawnPosition);
-                skeletonMessenger.FaceEntityInstantly(owner);
                 skeletonMessenger.caller = caller;
                 skeletonMessenger.owner = owner;
+                skeletonMessenger.SpawnInfrontOf(owner);
                 skeletonMessenger.itemToMail = player.getStackInHand(hand).copy();
                 owner.getWorld().spawnEntity(skeletonMessenger);
 

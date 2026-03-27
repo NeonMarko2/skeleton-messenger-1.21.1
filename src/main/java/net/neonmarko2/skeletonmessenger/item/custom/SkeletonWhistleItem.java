@@ -43,10 +43,7 @@ public class SkeletonWhistleItem extends Item {
                 }
                 var whistle_owner = world.getServer().getPlayerManager().getPlayer(player_uuid);
                 SkeletonMessengerEntity skeletonMessenger = new SkeletonMessengerEntity(ModEntities.SKELETON_MESSENGER, world);
-                var playerFacing = user.getEyePos().add(user.getRotationVec(1.0f).multiply(2));
-                var skeletonSpawnPosition = new Vec3d(playerFacing.x, user.getY(), playerFacing.z);
-                skeletonMessenger.setPosition(skeletonSpawnPosition);
-                skeletonMessenger.FaceEntityInstantly(user);
+                skeletonMessenger.SpawnInfrontOf(user);
                 skeletonMessenger.caller = user;
                 skeletonMessenger.owner = whistle_owner;
                 world.spawnEntity(skeletonMessenger);
