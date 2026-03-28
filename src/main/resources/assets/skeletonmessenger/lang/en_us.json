@@ -6,6 +6,9 @@
   "tooltip.skeletonmessenger.skeleton_whistle.unbound": "§7Not bound",
   "tooltip.skeletonmessenger.skeleton_whistle.name_fetch_fail": "§8Couldn't fetch player name",
 
+  "skeletonmessenger.popup.inventoryfull": "§7Your inventory was full, item was dropped beneath you",
+  "skeletonmessenger.popup.successfullymailed": "You mailed %1$s",
+  "skeletonmessenger.popup.emptyhanded": "The messenger requires an item",
   "skeletonmessenger.popup.summoned": "Your messenger was summoned",
   "skeletonmessenger.popup.firstuse": "This whistle is bound to you",
   "skeletonmessenger.popup.offline": "Player is offline",
