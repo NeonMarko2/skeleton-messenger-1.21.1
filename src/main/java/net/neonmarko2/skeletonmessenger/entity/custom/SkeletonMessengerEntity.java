@@ -144,7 +144,10 @@ public class SkeletonMessengerEntity extends MobEntity{
                     player.damage(getWorld().getDamageSources().magic(), 1);
                     return ActionResult.FAIL;
                 }
-
+                if(currentPlayerStack.isEmpty()){
+                    player.sendMessage(Text.translatable("skeletonmessenger.popup.emptyhanded"), true);
+                    return ActionResult.PASS;
+                }
                 SkeletonMessengerEntity skeletonMessenger = new SkeletonMessengerEntity(ModEntities.SKELETON_MESSENGER, owner.getWorld());
                 skeletonMessenger.caller = caller;
                 skeletonMessenger.owner = owner;
