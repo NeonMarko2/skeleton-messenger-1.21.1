@@ -157,7 +157,7 @@ public class SkeletonMessengerEntity extends MobEntity{
 
                 owner.getWorld().playSound(null, owner.getBlockPos(), SoundEvents.BLOCK_RESPAWN_ANCHOR_SET_SPAWN, SoundCategory.PLAYERS, 1, 1);
                 player.setStackInHand(hand, ItemStack.EMPTY);
-                player.sendMessage(Text.literal("Gave the messenger " + currentPlayerStack.getName().getString()));
+                player.sendMessage(Text.translatable("skeletonmessenger.popup.successfullymailed", currentPlayerStack.getName().getString()));
                 caller.removeStatusEffect(StatusEffects.BLINDNESS);
                 owner.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 20*1, 1));
                 discard();
