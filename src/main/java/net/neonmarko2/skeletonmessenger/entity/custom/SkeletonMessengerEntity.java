@@ -163,7 +163,12 @@ public class SkeletonMessengerEntity extends MobEntity{
                     player.damage(getWorld().getDamageSources().magic(), 1);
                     return ActionResult.FAIL;
                 }
-                player.getInventory().insertStack(itemToMail.copy());
+                boolean wasSuccessful = player.getInventory().insertStack(itemToMail.copy());
+                if(!wasSuccessful){
+                    ItemEntity droppedItem = new ItemEntity(player.getWorld(), player.getX(), player.getY(), player.getZ(), itemToMail.copy());
+                    player.sendMessage(Text.translatable("skeletonmessenger.popup.inventoryfull"));
+                    getWorld().spawnEntity(droppedItem);
+                }
                 owner.removeStatusEffect(StatusEffects.BLINDNESS);
                 discard();
             }
