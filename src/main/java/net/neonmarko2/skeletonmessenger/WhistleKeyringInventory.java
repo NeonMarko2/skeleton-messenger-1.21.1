@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 import net.neonmarko2.skeletonmessenger.component.ModDataComponentTypes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WhistleKeyringInventory implements Inventory {
@@ -20,10 +21,6 @@ public class WhistleKeyringInventory implements Inventory {
         for (int i = 0; i < stored.size() && i < inventory.size(); i++) {
             inventory.set(i, stored.get(i));
         }
-        ///inventory = keyring.get(ModDataComponentTypes.WHISTLE_KEYRING_ITEMS);
-//        if(inventory == null){
-//            inventory = DefaultedList.ofSize(18, ItemStack.EMPTY);
-//        }
     }
 
     @Override
@@ -65,7 +62,11 @@ public class WhistleKeyringInventory implements Inventory {
 
     @Override
     public void markDirty() {
-        keyring.set(ModDataComponentTypes.WHISTLE_KEYRING_ITEMS, inventory);
+        List<ItemStack> save = new ArrayList<>();
+        for (ItemStack stack : inventory) {
+            save.add(stack.copy());
+        }
+        keyring.set(ModDataComponentTypes.WHISTLE_KEYRING_ITEMS, save);
     }
 
     @Override
