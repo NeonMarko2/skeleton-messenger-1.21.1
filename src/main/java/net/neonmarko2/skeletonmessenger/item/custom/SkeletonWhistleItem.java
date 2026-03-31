@@ -11,7 +11,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.neonmarko2.skeletonmessenger.component.ModDataComponentTypes;
 import net.neonmarko2.skeletonmessenger.entity.ModEntities;
@@ -29,6 +28,7 @@ public class SkeletonWhistleItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
+
         if(!world.isClient()){
             var player_uuid = itemStack.get(ModDataComponentTypes.OWNER_UUID);
             if(player_uuid == null){
