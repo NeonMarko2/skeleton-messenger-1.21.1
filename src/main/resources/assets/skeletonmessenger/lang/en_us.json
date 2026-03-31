@@ -2,6 +2,8 @@
   "item.skeletonmessenger.skeleton_whistle": "§6Skeleton Whistle",
   "item.skeletonmessenger.skeleton_whistle_omni": "Omega Skeleton Whistle",
 
+  "item.skeletonmessenger.whistle_keyring": "Whistle Keyring",
+
   "tooltip.skeletonmessenger.skeleton_whistle.default": "Hold [shift] for extra info",
   "tooltip.skeletonmessenger.skeleton_whistle.unbound": "§7Not bound",
   "tooltip.skeletonmessenger.skeleton_whistle.name_fetch_fail": "§8Couldn't fetch player name",

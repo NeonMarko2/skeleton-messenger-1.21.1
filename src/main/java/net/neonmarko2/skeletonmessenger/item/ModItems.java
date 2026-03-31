@@ -8,9 +8,11 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.neonmarko2.skeletonmessenger.SkeletonMessenger;
 import net.neonmarko2.skeletonmessenger.item.custom.SkeletonWhistleItem;
+import net.neonmarko2.skeletonmessenger.item.custom.WhistleKeyring;
 
 public class ModItems {
     public static final Item SKELETON_WHISTLE = registerItem("skeleton_whistle", new SkeletonWhistleItem(new Item.Settings().maxCount(1)));
+    public static final Item WHISTLE_KEYRING = registerItem("whistle_keyring", new WhistleKeyring(new Item.Settings().maxCount(1)));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(SkeletonMessenger.MOD_ID, name), item);
@@ -21,6 +23,7 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.add(SKELETON_WHISTLE);
+            fabricItemGroupEntries.add(WHISTLE_KEYRING);
         });
     }
 }
