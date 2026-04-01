@@ -35,6 +35,6 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"accessories-fabric": ">=1.1.0"
+		"trinkets": "*"
 	}
 }
