@@ -6,6 +6,7 @@
 
   "tooltip.skeletonmessenger.skeleton_whistle.default": "Hold [shift] for extra info",
   "tooltip.skeletonmessenger.skeleton_whistle.unbound": "§7Not bound",
+  "tooltip.skeletonmessenger.skeleton_whistle.within_keyring_activate": "§2Right click to use!",
   "tooltip.skeletonmessenger.skeleton_whistle.name_fetch_fail": "§8Couldn't fetch player name",
 
   "skeletonmessenger.popup.inventoryfull": "§7Your inventory was full, item was dropped beneath you",

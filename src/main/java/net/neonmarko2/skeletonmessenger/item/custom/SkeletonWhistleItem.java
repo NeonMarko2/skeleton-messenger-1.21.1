@@ -96,7 +96,7 @@ public class SkeletonWhistleItem extends Item {
                 tooltip.add(Text.literal(stack.get(ModDataComponentTypes.OWNER_NAME)));
                 var player = MinecraftClient.getInstance().player;
                 if(player.currentScreenHandler instanceof GenericContainerScreenHandler && !player.getInventory().contains(stack)){
-                    tooltip.add(Text.literal("§2Right click to use!"));
+                    tooltip.add(Text.translatable("tooltip.skeletonmessenger.skeleton_whistle.within_keyring_activate"));
                 }
             }
         }else{
