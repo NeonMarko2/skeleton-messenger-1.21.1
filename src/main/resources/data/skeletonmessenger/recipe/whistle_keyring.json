@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    " i ",
+    "i #",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "skeletonmessenger:whistle_keyring"
+  }
+}
