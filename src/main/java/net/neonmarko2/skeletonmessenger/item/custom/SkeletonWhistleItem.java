@@ -22,6 +22,7 @@ import net.neonmarko2.skeletonmessenger.component.ModDataComponentTypes;
 import net.neonmarko2.skeletonmessenger.entity.ModEntities;
 import net.neonmarko2.skeletonmessenger.entity.custom.SkeletonMessengerEntity;
 import net.neonmarko2.skeletonmessenger.item.ModItems;
+import net.neonmarko2.skeletonmessenger.screenHandlers.KeyringScreenHandler;
 
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class SkeletonWhistleItem extends Item {
 
     @Override
     public boolean onClicked(ItemStack stack, ItemStack otherStack, Slot slot, ClickType clickType, PlayerEntity player, StackReference cursorStackReference) {
-        if (player.currentScreenHandler instanceof GenericContainerScreenHandler &&
+        if (player.currentScreenHandler instanceof KeyringScreenHandler &&
             !player.getInventory().contains(stack) &&
             clickType == ClickType.RIGHT){
             if(!player.getWorld().isClient){
@@ -95,7 +96,7 @@ public class SkeletonWhistleItem extends Item {
             }else{
                 tooltip.add(Text.literal(stack.get(ModDataComponentTypes.OWNER_NAME)));
                 var player = MinecraftClient.getInstance().player;
-                if(player.currentScreenHandler instanceof GenericContainerScreenHandler && !player.getInventory().contains(stack)){
+                if(player.currentScreenHandler instanceof KeyringScreenHandler && !player.getInventory().contains(stack)){
                     tooltip.add(Text.translatable("tooltip.skeletonmessenger.skeleton_whistle.within_keyring_activate"));
                 }
             }

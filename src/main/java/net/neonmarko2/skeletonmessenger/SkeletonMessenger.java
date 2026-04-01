@@ -7,6 +7,7 @@ import net.neonmarko2.skeletonmessenger.component.ModDataComponentTypes;
 import net.neonmarko2.skeletonmessenger.entity.ModEntities;
 import net.neonmarko2.skeletonmessenger.entity.custom.SkeletonMessengerEntity;
 import net.neonmarko2.skeletonmessenger.item.ModItems;
+import net.neonmarko2.skeletonmessenger.screenHandlers.ModScreenHandlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,6 +20,7 @@ public class SkeletonMessenger implements ModInitializer {
 		ModItems.registerModItems();
 		ModEntities.registerModEntities();
 		ModDataComponentTypes.registerDataComponents();
+		ModScreenHandlers.registerModScreens();
 		FabricDefaultAttributeRegistry.register(ModEntities.SKELETON_MESSENGER, SkeletonMessengerEntity.createAttributes());
 	}
 }
