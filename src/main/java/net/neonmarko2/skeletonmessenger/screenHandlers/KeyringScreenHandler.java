@@ -27,7 +27,7 @@ public class KeyringScreenHandler extends ScreenHandler {
 
         for (int j = 0; j < 2; j++) {
             for (int k = 0; k < 9; k++) {
-                this.addSlot(new Slot(inventory, k + j * 9, 8 + k * 18, 18 + j * 18));
+                this.addSlot(new KeyringSlot(inventory, k + j * 9, 8 + k * 18, 18 + j * 18));
             }
         }
 
